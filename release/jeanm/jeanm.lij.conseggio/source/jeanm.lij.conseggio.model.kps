@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package>
+  <System>
+    <KeymanDeveloperVersion>18.0.245.0</KeymanDeveloperVersion>
+    <FileVersion>12.0</FileVersion>
+  </System>
+  <Options>
+    <ExecuteProgram></ExecuteProgram>
+    <ReadMeFile>readme.htm</ReadMeFile>
+    <LicenseFile>..\LICENSE.md</LicenseFile>
+  </Options>
+  <Info>
+    <Name URL="">Ligurian lexical model</Name>
+    <Copyright URL="">© 2026 Jean Maillard</Copyright>
+    <Author URL="">Jean Maillard</Author>
+    <Version URL="">0.2</Version>
+    <Description URL="">Predictive text and autocorrection for Ligurian.</Description>
+  </Info>
+  <Files>
+    <File>
+      <Name>..\build\jeanm.lij.conseggio.model.js</Name>
+    </File>
+    <File>
+      <Name>welcome.htm</Name>
+    </File>
+    <File>
+      <Name>readme.htm</Name>
+    </File>
+    <File>
+      <Name>..\LICENSE.md</Name>
+    </File>
+  </Files>
+  <Keyboards/>
+  <LexicalModels>
+    <LexicalModel>
+      <Name>Ligurian lexical model</Name>
+      <ID>jeanm.lij.conseggio</ID>
+      <Languages>
+        <Language ID="lij">Ligurian</Language>
+      </Languages>
+    </LexicalModel>
+  </LexicalModels>
+  <RelatedPackages/>
+</Package>
