@@ -9,21 +9,35 @@ const source: LexicalModelSource = {
     'bible_wordlist.tsv',
   ],
 
-  wordBreaker: function (text: string): Span[] {
-    const wordPattern = /\/[\p{L}\p{M}]+|[\p{L}\p{M}]+/gu;
-    const words: Span[] = [];
-    let match: RegExpExecArray | null;
+  wordBreaker: (text: string) => {
+    const customization = {
+      rules: [
+        {
+          match: (context: any) => {
+           
+            return context.propertyMatch(
+              ['WSegSpace', 'sot'],
+              ['Negation'],
+              ['ALetter'],
+              null
+            );
+          },
+          breakIfMatch: false,
+        },
+      ],
 
-    while ((match = wordPattern.exec(text)) !== null) {
-      words.push({
-        text: match[0],
-        start: match.index,
-        end: match.index + match[0].length,
-        length: match[0].length,
-      });
-    }
+      propertyMapping: (char: string) => {
+        if (char === '/') {
+          return 'Negation';
+        }
 
-    return words;
+        return null;
+      },
+
+      customProperties: ['Negation'],
+    };
+
+    return wordBreakers['default'](text, customization);
   },
 };
 
